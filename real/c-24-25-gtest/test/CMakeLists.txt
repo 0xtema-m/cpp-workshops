@@ -15,6 +15,7 @@ enable_testing()
 
 add_executable(
     my-lib-tests
+
     algorithm_ut.cpp
     array_ut.cpp
     matchers.hpp

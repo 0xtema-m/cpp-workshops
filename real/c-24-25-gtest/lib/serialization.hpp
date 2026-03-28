@@ -28,7 +28,8 @@ namespace ohtuzh {
             return name_ == other.name_ && numbers_ == other.numbers_ && state_ == other.state_;
         }
 
-        void serialize(std::ostream& os) {
+        void serialize(std::ostream& os) const {
+            // "name_|1,1,12,3,|OK\n"
             os << name_ << '|';
             for (int32_t i: numbers_) {
                 os << i << ',';

@@ -8,13 +8,15 @@ namespace ohtuzh {
     class array {
     public:
         using value_type = T;
+
         array() = default;
+
         array(std::initializer_list<T> il) {
-            if (il.size() > Size) {
-                throw std::runtime_error(
-                    (std::stringstream() << "Initializer list size (" << il.size() << ") is grather than array size (" << Size << ")").str()
-                );
-            }
+            // if (il.size() > Size) {
+            //     throw std::runtime_error(
+            //         (std::stringstream() << "Initializer list size (" << il.size() << ") is grather than array size (" << Size << ")").str()
+            //     );
+            // }
             size_t i = 0;
             for (const T& val: il) {
                 data_[i] = val;
@@ -35,20 +37,20 @@ namespace ohtuzh {
         }
 
         T& at(const size_t index) {
-            if (index >= Size) {
-                throw std::runtime_error(
-                    (std::stringstream() << "Index out of a range! (" << index << " >= " << Size << ")").str()
-                );
-            }
+            // if (index >= Size) {
+            //     throw std::runtime_error(
+            //         (std::stringstream() << "Index out of a range! (" << index << " >= " << Size << ")").str()
+            //     );
+            // }
             return data_[index];
         }
 
         const T& at(const size_t index) const {
-            if (index >= Size) {
-                throw std::runtime_error(
-                    (std::stringstream() << "Index out of a range! (" << index << " >= " << Size << ")").str()
-                );
-            }
+            // if (index >= Size) {
+            //     throw std::runtime_error(
+            //         (std::stringstream() << "Index out of a range! (" << index << " >= " << Size << ")").str()
+            //     );
+            // }
             return data_[index];
         }
 
